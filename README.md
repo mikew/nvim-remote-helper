@@ -136,7 +136,7 @@ nvrh client open \
 nvrh can be configured with:
 
 - Environment variables (see `--help` to see what's supported)
-- A configuration file at `~/.config/nvrh/config.yaml`
+- A configuration file at `~/.config/nvrh/config.yml`
 - Command line arguments (see `--help`)
 
 The configuration file uses the same names as the command line arguments. It
