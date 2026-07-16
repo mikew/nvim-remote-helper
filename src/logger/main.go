@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/dusted-go/logging/prettylog"
+	"nvrh/src/logger/prettylog"
 )
 
 func PrepareLogger(isDebug bool) {
