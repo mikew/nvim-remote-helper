@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.1](https://github.com/mikew/nvrh/compare/v0.9.0...v0.9.1) (2026-07-16)
+
+
+### Bug Fixes
+
+* **doc:** fix inconsistent between doc and impl ([#88](https://github.com/mikew/nvrh/issues/88)) ([55ac767](https://github.com/mikew/nvrh/commit/55ac7676d3fa0d7e6d66a799d012b364b1373b2e))
+* Logs in light terminal themes ([#91](https://github.com/mikew/nvrh/issues/91)) ([c762346](https://github.com/mikew/nvrh/commit/c76234655099508cf5ef9c9c0bd0a62844555fb3))
+
 ## [0.9.0](https://github.com/mikew/nvrh/compare/v0.8.0...v0.9.0) (2026-04-21)
 
 
