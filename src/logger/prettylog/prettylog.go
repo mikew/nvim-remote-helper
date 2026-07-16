@@ -30,7 +30,7 @@ const (
 	blue         = 34
 	magenta      = 35
 	cyan         = 36
-	lightGray    = 37
+	lightGray    = 90
 	darkGray     = 90
 	lightRed     = 91
 	lightGreen   = 92
@@ -106,21 +106,20 @@ func (h *Handler) Handle(ctx context.Context, r slog.Record) error {
 	}
 
 	if !levelAttr.Equal(slog.Attr{}) {
-		level = levelAttr.Value.String() + ":"
-
-		if r.Level <= slog.LevelDebug {
-			level = colorize(lightGray, level)
-		} else if r.Level <= slog.LevelInfo {
-			level = colorize(cyan, level)
-		} else if r.Level < slog.LevelWarn {
-			level = colorize(lightBlue, level)
-		} else if r.Level < slog.LevelError {
-			level = colorize(lightYellow, level)
-		} else if r.Level <= slog.LevelError+1 {
-			level = colorize(lightRed, level)
-		} else if r.Level > slog.LevelError+1 {
-			level = colorize(lightMagenta, level)
+		var colorCode int
+		switch {
+		case r.Level >= slog.LevelError:
+			colorCode = red
+		case r.Level >= slog.LevelWarn:
+			colorCode = yellow
+		case r.Level >= slog.LevelInfo:
+			colorCode = blue
+		default:
+			colorCode = lightGray
 		}
+
+		level = levelAttr.Value.String() + ":"
+		level = colorize(colorCode, level)
 	}
 
 	var timestamp string
